@@ -1,0 +1,5622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9BCF748-E5D9-41B8-A29A-7CC274DA1459}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AutoSellCommon</RootNamespace>
+    <AssemblyName>AutoSellCommon</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AutoSellCommon.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AutoSellCommon.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.vb" />
+    <Compile Include="GlobalSettings.vb" />
+    <Compile Include="Managers\BuildRowDataManager.vb" />
+    <Compile Include="Managers\OrdersManager.vb" />
+    <Compile Include="Models\CryptoObject.vb" />
+    <Compile Include="Enums.vb" />
+    <Compile Include="EnumsToStringUsingDescription.vb" />
+    <Compile Include="Models\RowData.vb" />
+    <Compile Include="Models\RowViewModel.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\007.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1337.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1CR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1ST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2BACCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2GIVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\32BIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3DES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4CHN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\611.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\808.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\888.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8BIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8BT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DIM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVENT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OPTION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SUB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ABC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ABT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ABY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ABYSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AC3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACOIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ACT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ADZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AEON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AERM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AERO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AGRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AGS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AIB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AIR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALQO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALTCOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ALTOCAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMBER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AMY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANCP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ANTI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\APC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\APEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\APPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\APT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\APX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARBI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARENA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARGUS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARPA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ART.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ASAFE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ASN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ASTRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATFS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATKN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ATX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AURS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AUTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AVT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AXIOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AXR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\B2B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\B3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BamitCoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BBCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BBR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCCOIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BCY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BDG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BDL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BELA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BENJI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BERN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BEST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BFX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BHC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIGUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\binance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BIT16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITCNY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITOK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bittrex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITUSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BITZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BKX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLAZR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLITZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLOCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLOCKPAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLRY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BMXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BNB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BNK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOLI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOMB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOSON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BOXY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BPL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BQC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BQX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRAIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRDD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BSTAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BSTK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BSTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BT1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BT2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCRY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTCZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTDX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTMI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTPL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTTF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BTZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BUCKS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BUK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BULLS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BURST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BUZZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BWK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\C2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\C20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CABS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CACH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CALC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CANN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAPP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CARBON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CAV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CBD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CBX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CDN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CDX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CELL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CESC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CETI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CFD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CFI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CGA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHAO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHESS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHIEF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHILD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHIPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CHOOF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CINNI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CIR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CIRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CJC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CJT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLINT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLOAK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLOUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLUB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLUD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CLV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CMPCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COFI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COMM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COOL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CORAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CORE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COVAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\COX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CPAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CQST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRAFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRAIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRAVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRDS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CREA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CREDO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CREVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRNK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRTM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CRYPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CSMIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CSNO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CSTL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CUBE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CURE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CVCOIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CWV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CWXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CYG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CYP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CYT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DANK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DARK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DATA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DAXX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DCY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEEP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DENT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DETH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DEUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DFBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGORE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DGPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DICE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DIEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DIGS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DISK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DIVX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DLISK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DNET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DNR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOGED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOGETH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOPE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DOVU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DPAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DPP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRACO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRGN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRKT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRM8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DROP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRXNE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DRZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DSB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DTB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DTCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DTT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DUB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DUCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DUO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DUTCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DUX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DYN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EAGS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EARTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EB3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EBZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ECOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDDIE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EDRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EFL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EFYT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EGAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EGG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EKN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EKO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELTC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ELTCOIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMIGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENRG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ENTER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EPY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EQB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EQM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EQT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EQUAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ERY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ESC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ESP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETHB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETHD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ETT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EUC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EVX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EXY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EZM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\F16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FAIR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FAME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FAZZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FGZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIBRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIRST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FJC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLIK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLIXX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLLW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLVR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FLY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FONZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FOOD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FOREX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRAZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FRWC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FSC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FSN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FTP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FUZZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FYN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FYP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAIA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAKH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GBIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GBRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GBX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GBYTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GEA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GEMZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GEO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GGS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GHC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GHOUL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GIFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GIM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GIVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GIZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GJC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLOBE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GLYPH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GMX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GNJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GNO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOLOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOOD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GOTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GPL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GPU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRAV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GREXIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRWI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GSX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GSY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GUESS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GUNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GVT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\H2O.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HALLO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HAMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HAZE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HBN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HDG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HEAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HEDG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HEEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HGT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HILL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HIRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HKG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HKN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HMQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HODL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HOLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HONEY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HSP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HTML5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HUC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HUGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HUSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HVCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HVN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HXX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HYP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HYPER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HZT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\I0C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IBANK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICOO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ICX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IFLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IGNIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ILC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ILCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMPCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INCNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INCP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INDI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INF8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INFX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INPAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INSANE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INSN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\INXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IOU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ISL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ITNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ITT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IVZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IWT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\J.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JANE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JIF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JOBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JOK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JUDGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JVY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JWL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KAPU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KARM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KAYI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KEK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KEY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KLK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KOBO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KOLION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KORE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KRAK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KRONE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KTK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KUBO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KURT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\KUSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LANA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LAZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LCASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LDM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LDOGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEMON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LENIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEPEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LEV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LGBTQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LGD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LIFE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LIMX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LINDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LINK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LINX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LIR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LIV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LK7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LKK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LKY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LNK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOCI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOOK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LQD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LSK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTCD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTCU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LUCKY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LUN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LUX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LVG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LYB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\M1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MANA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MARS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MARV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MARX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MARYJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MASS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MBI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MBIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MBRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MCRN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MDL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MEDI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MEGA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MEME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MEOW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\METAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MILO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MINE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MINEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MINT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MIV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MKR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MLITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MLN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MLS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MMNXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MMXIV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MMXVI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MNZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOBI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOJO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MONA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MONETA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MONEY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOOND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MOTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MPRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRSA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MRY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTLM3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MUDRA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MUE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MUSIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MUU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MWC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MYB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MYST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\N7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NAMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NANAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NAS2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NAUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NAV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NBIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NDOGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEBU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEOG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NETC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NETKO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NEWB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NICE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NIMFA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NKA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NKT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NLC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NMB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NMR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NOBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NODE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NOO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NOTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NPX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NRN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NTRN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NUBIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NUKE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NULS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NUM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NVST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXTI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NXTTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NYAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OAX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OBITS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OCTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ODMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ODN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ODNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OLDSF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OLV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OLYMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OMA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OMG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OMNI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ONG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ONION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ONX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OPAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OPES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OPP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ORB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ORLY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ORME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ORO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OROC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OS76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OXY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PAK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PARA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PART.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PASC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PASL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PAYP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PCM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PEPECASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PFR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PGL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIGGY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PINK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PINKX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIRL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIVX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PIZZA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PKB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PKT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLANET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PNK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POINTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POLL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POLY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POSW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\POWR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PPP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PPY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PQT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PROC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PSB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PSEUD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PSI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PSY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PTA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PTOY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PULSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PUPA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PURA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PURE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PWR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PXI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PXL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PYN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PYP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PZM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QAU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QBK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QORA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QRK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QRL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QSLV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QSP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QTL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QTUM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QTZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QVT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\QWARK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RADI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RADS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RAIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RATIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBIES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RBY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RDD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RDN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\REX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RFL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RHEA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RHOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RICE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RIDE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RIPO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RIPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RISE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RIYA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RLX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RNDR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROOTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROUND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ROYAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RPX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RT2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RUBIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RUPX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RUST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RUSTBITS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RVT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RYCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RYZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RZR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\S8C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAFEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SALT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SANDG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SAT2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SBD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCORE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCRPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SDAO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SDP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SEEDS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SEND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SENSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SEQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SETH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SFE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SFR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHADE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHIFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHORTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SHREK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SIB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SIFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SIGT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SIGU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SILK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SJCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SKB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SKIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SKR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SKY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SLING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SLM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SLS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMART.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMLY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMSR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNGLS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNOV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNRG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOLE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SONG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOUL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPACE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPANK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPHTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPKTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPORT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPOTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPRTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SPX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SQL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SQP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SRN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SSD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SSTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SSV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STALIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\START.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STEEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STEPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STHR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STOCKBET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STORJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STORM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STRAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\STX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SUMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SUPER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SWARM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SWEET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SWIFT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SWING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SWT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SXC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SYC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SYNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SYNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SYS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TAU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TBCX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TDFB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TEAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TECH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TEK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TELL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TENNET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TESLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TFL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TGT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\THC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\THNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\THS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TIX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TKN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TKR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TKS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TKT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TMT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TNB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TOA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TODAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TPAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TPG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRIA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRIBE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRICK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRIG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRUMP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRUST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TTT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TWIST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TWLV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\U.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UAEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UBIQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UBQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UFO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UFR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UGT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UKG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ULTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNIFY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNIQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNITS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNITY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UNO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UQC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\URO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\USC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\USDE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\USDT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UTIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UTK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UTN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VAPOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VDO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VEC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VEE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VEG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VERI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VERSA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIBE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIDZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIRAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VISIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VIVO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VLTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOISE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOLT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VOYA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VPRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VRP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VRS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VSL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VSX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VTA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VTR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VUC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VZT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WABI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WAN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WAND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WARP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WAVES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WAX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WBB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WBTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WEALTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WEB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WEX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WGC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WHL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WILD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WINE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WINGS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WINK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WISC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WISH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WIZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WNET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WOLF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WOLK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WOMEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WORM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WPR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WRT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WSX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WTT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WYR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\X2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\X8X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XAI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XAU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XAUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XBY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCASH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XCXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XDQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XFC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XGB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xGOx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XHI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XIOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XJO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XLB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XLM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XLR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMRG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XMY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XNC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XNN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XNX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPOKE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPTX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XPY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XQN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XRP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSEED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XSPEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XTZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XUC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XUN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XVG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XVP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XWC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XWT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XXX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\XZC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YAY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YOC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YOVI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\YOYOW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Z2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZBC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZCG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZEC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZECD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZEIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZEN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZENI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZEPH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZET2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZLQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZNE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZNT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZNY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZOI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZOOM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZRC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZRX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ZYD.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

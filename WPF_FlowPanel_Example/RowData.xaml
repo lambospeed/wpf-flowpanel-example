@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="RowData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutoSellControls"
+             xmlns:common="clr-namespace:AutoSellCommon;assembly=AutoSellCommon"
+             Name="UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+
+                <ItemsControl x:Name="rowItemsControl" Grid.IsSharedSizeScope="True">
+                    <ItemsControl.ItemsPanel >
+                        <ItemsPanelTemplate >
+                            <UniformGrid Columns="1" Background="White"></UniformGrid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="White">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Horizontal" Background="White" Name="stackRowData" Margin="0,0,10,0" HorizontalAlignment="Stretch">
+                            <Border BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Stretch" Margin="8,3,3,8" VerticalAlignment="Stretch">
+                            <Grid MouseLeftButtonDown="RowDetail_Open" Background="GhostWhite">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="A"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="B"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="C"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="D"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="E"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="F"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto" SharedSizeGroup="G"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+                                        <Image Grid.Column="1" VerticalAlignment="Center" Width="32" Height="32" Margin="5" Source="{Binding Path=ExchangeImageUri}"  Stretch="Fill"></Image>
+                                        <Image Grid.Column="2" VerticalAlignment="Center" Width="32" Height="32" Margin="5" Source="{Binding Path=SymbolImageUri}" Stretch="Fill"></Image>
+                                        <Label Grid.Column="3" VerticalAlignment="Center" Content="{Binding Path=SymbolName}" Foreground="Black" FontWeight="Bold" FontFamily="Microsoft Sans Serif" FontSize="24" Visibility="{Binding Path=SymbolNameVisibility}"></Label>
+                                        <Label Grid.Column="4" VerticalAlignment="Center" Content="{Binding Path=CurrentPrice, StringFormat='C: {0}'}"  FontFamily="Microsoft Sans Serif" FontSize="18" Visibility="{Binding Path=CurrentPriceVisibility}"  Foreground="{Binding Path=CurrentPriceForecolor}"></Label>
+                                        <Label Grid.Column="5" VerticalAlignment="Center" Content="{Binding Path=PaidPrice, StringFormat='P: {0}'}"  FontFamily="Microsoft Sans Serif" FontSize="18" Visibility="{Binding Path=PaidPriceVisibility}" Foreground="{Binding Path=PaidPriceForecolor}"></Label>
+                                        <Label Grid.Column="6" VerticalAlignment="Center" Content="{Binding Path=PlusMinusRate}" FontFamily="Microsoft Sans Serif" FontSize="18" Visibility="{Binding Path=PlusMinusRateVisibility}" Foreground="{Binding Path=PlusMinusRateForecolor}"></Label>
+                                        <Label Grid.Column="7" VerticalAlignment="Center" Content="{Binding Path=PlusMinusPercent, StringFormat=' {0}%'}" FontFamily="Microsoft Sans Serif" FontSize="18" Visibility="{Binding Path=PlusMinusPercentVisibility}" Foreground="{Binding Path=PlusMinusPercentForecolor}"></Label>
+                                        <Label Grid.Column="4" VerticalAlignment="Center" Grid.ColumnSpan="4" Content="{Binding Path=StatusMessage}" FontFamily="Microsoft Sans Serif" FontSize="18" Visibility="{Binding Path=StatusMessageVisibility}" Foreground="{Binding Path=StatusMessageForecolor}"></Label>
+                                        <Label Grid.Column="8" Name="Id" Content="{Binding Path=Id}" Visibility="Collapsed"></Label>
+                                    </Grid>
+                        </Border>
+
+                                </StackPanel>
+
+                        <Button Grid.Column="2" Margin="5" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center">S E L L</Button>
+                    </Grid>
+
+                </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            
+        </ScrollViewer>
+
+</UserControl>
